@@ -1,4 +1,4 @@
-# 📘 README – Pertanyaan Analisis (4.3)
+# README – Pertanyaan Analisis (4.3)
 
 ## Identitas
 - Nama: Finda Wulan Febrianti  
@@ -42,7 +42,3 @@ Jika nilai melebihi 15, maka counter akan otomatis kembali ke 0.
 - Counter dikontrol oleh variabel dan input  
 - Push button memungkinkan kontrol manual  
 - Sistem berjalan otomatis maupun interaktif  
-
----
-
-✨ *Disusun berdasarkan hasil praktikum Modul II GPIO*
