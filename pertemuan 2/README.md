@@ -1,4 +1,4 @@
-# README – Pertanyaan Analisis (4.3)
+# README – Pertanyaan praktikum (4.3)
 
 ## Identitas
 - Nama: Finda Wulan Febrianti  
@@ -6,7 +6,7 @@
 
 ---
 
-##  4.3 Pertanyaan Analisis
+##  4.3 Pertanyaan pratikum
 
 ### 1. Analisis hasil percobaan 2A dan 2B
 Hasil percobaan 2A menunjukkan bahwa seven segment berhasil difungsikan sebagai counter heksadesimal otomatis yang menampilkan 0–F secara berurutan menggunakan pola bit dalam array dua dimensi.  
