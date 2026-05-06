@@ -1,4 +1,4 @@
-##Percobaan 4A – ADC Kendali Servo##
+**Percobaan 4A – ADC Kendali Servo**
 <img width="1200" height="1600" alt="Dokumentasi percobaan A" src="https://github.com/user-attachments/assets/0dcb89e8-28d1-40f1-bf41-7a05242e19c3" />
 
 1. Apa fungsi analogRead() pada praktikum ini?
@@ -22,7 +22,7 @@ pos = map(val, 0, 1023, 30, 150);
 
 Dengan demikian servo hanya bergerak dari 30° sampai 150°.
 
-##Percobaan 4B – PWM Kendali Kecerahan LED##
+**Percobaan 4B – PWM Kendali Kecerahan LED**
 <img width="1200" height="1600" alt="Dokumentasi Percobaan B" src="https://github.com/user-attachments/assets/9a5b4794-3893-476b-8df9-c6cc3ced737c" />
 
 1. Mengapa LED dapat diatur kecerahannya menggunakan analogWrite()?
