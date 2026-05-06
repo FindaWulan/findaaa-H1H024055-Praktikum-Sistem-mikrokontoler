@@ -1,23 +1,54 @@
-4. HASIL DAN ANALISIS
-4.1 Percobaan 4A – ADC Kendali Servo
+##Percobaan 4A – ADC Kendali Servo##
+<img width="1200" height="1600" alt="Dokumentasi percobaan A" src="https://github.com/user-attachments/assets/0dcb89e8-28d1-40f1-bf41-7a05242e19c3" />
 
-Pada percobaan ini, servo berhasil bergerak mengikuti putaran potensiometer. Saat potensiometer diputar, nilai ADC berubah dan sudut servo ikut berubah dari 0° sampai 180°. Nilai ADC dan sudut servo juga tampil pada Serial Monitor.
+1. Apa fungsi analogRead() pada praktikum ini?
 
-Gambar 4.1 Dokumentasi Percobaan ADC Kendali Servo
+Fungsi analogRead() digunakan untuk membaca nilai tegangan analog dari potensiometer melalui pin A0. Nilai tersebut kemudian dikonversi menjadi data digital dengan rentang 0–1023 menggunakan ADC pada Arduino.
 
-[Masukkan Foto Percobaan Servo]
+2. Mengapa diperlukan fungsi map()?
 
-Analisis
+Karena nilai ADC dan sudut servo memiliki rentang yang berbeda. ADC memiliki rentang 0–1023, sedangkan servo bergerak pada rentang 0°–180°. Fungsi map() digunakan untuk menyesuaikan kedua rentang tersebut.
 
-Berdasarkan hasil percobaan, ADC berhasil membaca nilai analog dari potensiometer dan mengubahnya menjadi data digital. Nilai tersebut kemudian digunakan untuk mengontrol sudut servo menggunakan fungsi map().
+Contoh:
 
-4.2 Percobaan 4B – PWM Kendali Kecerahan LED
+pos = map(val, 0, 1023, 0, 180);
+3. Bagaimana cara membatasi servo hanya bergerak 30°–150°?
 
-Pada percobaan ini, LED berhasil menyala dengan tingkat kecerahan yang berbeda sesuai putaran potensiometer. Semakin besar nilai ADC, maka LED semakin terang.
+Rentang sudut pada fungsi map() diubah menjadi 30 hingga 150.
 
+Contoh:
 
-Gambar 4.2 Dokumentasi Percobaan PWM Kendali Kecerahan LED
+pos = map(val, 0, 1023, 30, 150);
 
-Analisis
+Dengan demikian servo hanya bergerak dari 30° sampai 150°.
 
-PWM berhasil digunakan untuk mengatur kecerahan LED menggunakan fungsi analogWrite(). Nilai ADC dari potensiometer diubah menjadi nilai PWM sehingga intensitas cahaya LED dapat berubah secara bertahap.
+##Percobaan 4B – PWM Kendali Kecerahan LED##
+<img width="1200" height="1600" alt="Dokumentasi Percobaan B" src="https://github.com/user-attachments/assets/9a5b4794-3893-476b-8df9-c6cc3ced737c" />
+
+1. Mengapa LED dapat diatur kecerahannya menggunakan analogWrite()?
+
+Karena analogWrite() menghasilkan sinyal PWM yang mengatur duty cycle HIGH dan LOW secara cepat. Semakin besar nilai PWM, maka LED terlihat semakin terang.
+
+Contoh:
+
+analogWrite(ledPin, pwmValue);
+2. Apa hubungan antara ADC dan PWM?
+
+ADC memiliki rentang nilai 0–1023, sedangkan PWM memiliki rentang 0–255. Oleh karena itu diperlukan fungsi map() untuk mengubah nilai ADC menjadi nilai PWM.
+
+Contoh:
+
+pwmValue = map(adcValue, 0, 1023, 0, 255);
+3. Bagaimana agar LED hanya menyala pada PWM 50–200?
+
+Dapat menggunakan kondisi if.
+
+Contoh:
+
+if (pwmValue >= 50 && pwmValue <= 200) {
+  analogWrite(ledPin, pwmValue);
+} else {
+  analogWrite(ledPin, 0);
+}
+
+Dengan kondisi tersebut LED hanya menyala ketika nilai PWM berada pada rentang 50–200.
